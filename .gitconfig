@@ -1,0 +1,33 @@
+[alias]
+	co = checkout
+	f = fetch --prune
+	bs = branch --list
+	s = status
+	
+	# Merge latest dev code into current branch
+	dev = !git pull origin dev && git merge dev
+
+	# Create new branch and check it out immediately
+	b = checkout -b 
+
+  # Add aliases
+	# From https://github.com/GitAlias/gitalias/blob/db8e868077fdecd3be1e1e7091a8578e032a1aa9/gitalias.txt#L364, renamed
+	add-scoped-alias = "!f() { [ $# = 3 ] && git config $1 alias.\"$2\" \"$3\" && return 0 || echo \"Usage: git add-(local|global)-alias <new alias> <original command>\" >&2 && return 1; }; f"
+	add-alias = "!git add-scoped-alias --global"
+  add-local-alias = "!git add-scoped-alias --local"
+	
+  # List aliases
+	alias = config --get-regexp ^alias\\.
+	
+	# Push to a new remote branch
+	ps = push -u origin HEAD
+  # Added just for consistency with ps, so both push and pull have 2 character aliases
+	pl = pull
+  
+	# Delete branches which have been merged into dev branch - from https://www.atlassian.com/blog/git/advanced-git-aliases
+	merged = "!f() { git branch --merged dev | grep -v " dev$" | xargs -r git branch -d; }; f"
+	
+	# Check out a branch by a partial branch name (e.g. a PBI number) - from https://stackoverflow.com/a/61309684/4051181
+	cop = "!f() { git branch -a | grep -m1 -e ${1}.*${2} | sed \"s/remotes\\/origin\\///\" | xargs git checkout; }; f"
+[fetch]
+	prune = true
