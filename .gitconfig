@@ -14,7 +14,7 @@
 	# From https://github.com/GitAlias/gitalias/blob/db8e868077fdecd3be1e1e7091a8578e032a1aa9/gitalias.txt#L364, renamed
 	add-scoped-alias = "!f() { [ $# = 3 ] && git config $1 alias.\"$2\" \"$3\" && return 0 || echo \"Usage: git add-(local|global)-alias <new alias> <original command>\" >&2 && return 1; }; f"
 	add-alias = "!git add-scoped-alias --global"
-  add-local-alias = "!git add-scoped-alias --local"
+        add-local-alias = "!git add-scoped-alias --local"
 	
         # List aliases
 	alias = config --get-regexp ^alias\\.
