@@ -29,5 +29,8 @@
 	
 	# Check out a branch by a partial branch name (e.g. a PBI number) - from https://stackoverflow.com/a/61309684/4051181
 	cop = "!f() { git branch -a | grep -m1 -e ${1}.*${2} | sed \"s/remotes\\/origin\\///\" | xargs git checkout; }; f"
+	
+	# View commits on the current branch which have not yet been pushed to the server
+	unpushed = cherry -v
 [fetch]
 	prune = true
