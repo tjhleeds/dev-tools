@@ -35,6 +35,7 @@
 	
 	# Squash commits from the current branch into another branch. Does not commit the result, so you can review and write a message.
 	# Modified from https://stackoverflow.com/a/37209562/4051181
+	# Usage - while on 'wip/12345', wanting to squash everything into 'feature/12345', run 'git squash feature/12345'.
 	squash = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git checkout ${1}; git merge --squash $BRANCH; }; f"
 [fetch]
 	prune = true
