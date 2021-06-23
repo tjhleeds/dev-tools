@@ -32,5 +32,9 @@
 	
 	# View commits on the current branch which have not yet been pushed to the server
 	unpushed = cherry -v
+	
+	# Squash commits from the current branch into another branch. Does not commit the result, so you can review and write a message.
+	# Modified from https://stackoverflow.com/a/37209562/4051181
+	squash = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git checkout ${1}; git merge --squash $BRANCH; }; f"
 [fetch]
 	prune = true
