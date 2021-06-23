@@ -8,7 +8,10 @@
 	dev = !git pull origin dev && git merge dev
 
 	# Create new branch and check it out immediately
-	b = checkout -b 
+	b = checkout -b
+	
+	# Delete branch
+	db = branch -D
 
 	# Add aliases
 	# From https://github.com/GitAlias/gitalias/blob/db8e868077fdecd3be1e1e7091a8578e032a1aa9/gitalias.txt#L364, renamed
