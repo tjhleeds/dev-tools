@@ -24,6 +24,8 @@
 	
 	# Push to a new remote branch
 	ps = push -u origin HEAD
+	# Handle typo that I keep making when pushing
+	pushj = push
 	# Added just for consistency with ps, so both push and pull have 2 character aliases
 	pl = pull
 	# Push up to a specific commit - usage is `git pt abc123` - see https://coderwall.com/p/hexinq/git-push-up-to-a-certain-commit for explanation
