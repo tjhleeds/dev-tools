@@ -1,0 +1,6 @@
+@-moz-document url-prefix("https://dev.azure.com/audacia/Gleadell.Ultra/_git/Gleadell.Ultra/pullrequest") {
+div.pr-header-branches > :last-child {
+    border: red 2px solid;
+    padding: 5px;
+}
+}
