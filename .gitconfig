@@ -29,7 +29,9 @@
 	# Added just for consistency with ps, so both push and pull have 2 character aliases
 	pl = pull
 	# Push up to a specific commit - usage is `git pt abc123` - see https://coderwall.com/p/hexinq/git-push-up-to-a-certain-commit for explanation
-	pt = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git push origin ${1}:$BRANCH; }; f"
+	pt = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git push -u origin ${1}:refs/heads/$BRANCH; }; f"
+	# Set upstream branch - useful if you have used `pt` to create the branch on the server, as it doesn't set it as upstream (untested - also might be possible to include within pt)
+	su = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git branch -u origin/$BRANCH; }; f"
   
 	# Delete branches which have been merged into dev branch - from https://www.atlassian.com/blog/git/advanced-git-aliases
 	merged = "!f() { git branch --merged dev | grep -v " dev$" | xargs -r git branch -d; }; f"
@@ -44,6 +46,13 @@
 	# Modified from https://stackoverflow.com/a/37209562/4051181
 	# Usage - while on 'wip/12345', wanting to squash everything into 'feature/12345', run 'git squash feature/12345'.
 	squash = "!f() { BRANCH=`git symbolic-ref --short HEAD`; git checkout ${1}; git merge --squash $BRANCH; }; f"
+	
+	# List conflicts - https://stackoverflow.com/a/11014518/4051181
+	conflicts = !git ls-files --unmerged | cut -f2 | sort -u
+	
+	# Switch from a feature branch to the latest code in dev branch, and delete any merged branches.
+	# Intended usage is for after pushing a feature branch, when ready to start a new feature based on dev branch.
+	done = !git fetch && git checkout dev && git pull && git merged
 [fetch]
 	prune = true
 [include]
