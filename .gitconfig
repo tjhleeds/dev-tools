@@ -52,7 +52,7 @@
 	
 	# Switch from a feature branch to the latest code in dev branch, and delete any merged branches.
 	# Intended usage is for after pushing a feature branch, when ready to start a new feature based on dev branch.
-	done = !git fetch && git checkout dev && git pull && git merged
+	done = !git fetch && git checkout dev && git pull && git merged && git status
 [fetch]
 	prune = true
 [include]
