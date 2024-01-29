@@ -24,6 +24,9 @@
 		- Will need to enable settings sync, and get settings from account
 - Postman
 - Spotify
+- Angular CLI
+	- `npm install -g @angular/cli`
+ 	- Add `%USERPROFILE%\AppData\Roaming\npm` to PATH.
 
 ## Requires admin approval
 
