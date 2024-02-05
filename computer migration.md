@@ -25,6 +25,9 @@
 		- File templates
 - Postman
 - Spotify
+- Angular CLI
+	- `npm install -g @angular/cli`
+ 	- Add `%USERPROFILE%\AppData\Roaming\npm` to PATH.
 - EF Core CLI (global install)
 	- `dotnet tool install --global dotnet-ef`
 
