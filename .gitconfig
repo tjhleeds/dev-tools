@@ -53,6 +53,11 @@
 	# Switch from a feature branch to the latest code in dev branch, and delete any merged branches.
 	# Intended usage is for after pushing a feature branch, when ready to start a new feature based on dev branch.
 	done = !git fetch && git checkout dev && git pull && git merged && git status
+	
+	# Run EF Core migrations
+	# Need to change directory into the directory where you are running the command first - see https://stackoverflow.com/a/31722425/4051181
+	# This assumes you are running the command in the right folder to start with. 
+	mig = "!f() { cd ${GIT_PREFIX:-.}; dotnet ef database update; }; f"
 [fetch]
 	prune = true
 [include]
