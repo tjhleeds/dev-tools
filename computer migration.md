@@ -22,11 +22,11 @@
 - JetBrains toolbox
 	- Rider
 		- Will need to enable settings sync, and get settings from account
+		- File templates
 - Postman
 - Spotify
-- Angular CLI
-	- `npm install -g @angular/cli`
- 	- Add `%USERPROFILE%\AppData\Roaming\npm` to PATH.
+- EF Core CLI (global install)
+	- `dotnet tool install --global dotnet-ef`
 
 ## Requires admin approval
 
@@ -43,7 +43,7 @@
 - SQL Server
 - SSMS
 - Azure Data Studio
-	- Settings are stored in %appdata%\azuredatastudio\User\settings.json
+	- Settings are stored in `%appdata%\azuredatastudio\User\settings.json`
 - ShareX
 	- Need to import settings
 - OneNote
