@@ -4,8 +4,8 @@
 	bs = branch --list
 	s = status
 	
-	# Merge latest dev code into current branch
-	dev = !git pull origin dev && git merge dev
+	# Merge latest dev code into current branch, and also update the local dev branch
+	dev = !git pull origin dev && git merge dev && git fetch origin dev:dev
 
 	# Create new branch and check it out immediately
 	b = checkout -b
@@ -58,7 +58,15 @@
 	# Need to change directory into the directory where you are running the command first - see https://stackoverflow.com/a/31722425/4051181
 	# This assumes you are running the command in the right folder to start with. 
 	mig = "!f() { cd ${GIT_PREFIX:-.}; dotnet ef database update; }; f"
+	
+	# Open git config in default editor
+	conf = config --global -e
 [fetch]
 	prune = true
 [include]
 	path = .gitconfig-pii
+[http]
+	sslCAInfo = C:\\Data\\cacertchain.pem
+	sslBackend = schannel
+[core]
+	editor = 'C:\\Program Files\\Notepad++\\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
