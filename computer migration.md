@@ -23,13 +23,15 @@
 	- Rider
 		- Will need to enable settings sync, and get settings from account
 		- File templates
-- Postman
+- ~Postman~ Bruno
 - Spotify
 - Angular CLI
 	- `npm install -g @angular/cli`
  	- Add `%USERPROFILE%\AppData\Roaming\npm` to PATH.
 - EF Core CLI (global install)
 	- `dotnet tool install --global dotnet-ef`
+- PowerToys
+	- Import settings from OneDrive
 
 ## Requires admin approval
 
